@@ -1,6 +1,6 @@
 <?php
 function countSize($bit,$array=false){
-	$type = array('Bytes','KB','MB','GB','TB');  
+	$type = array('Bytes','KB','MB','GB','TB','PB','EB','ZB','YB');
 	$box = array('1','1024','1048576','1073741824','TB');  
 	for($i = 0; $bit >= 1024; $i++) {  
 		$bit/=1024;  
