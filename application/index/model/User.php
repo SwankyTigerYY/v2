@@ -333,7 +333,7 @@ class User extends Model{
 	}
 
 	static function countSize($bit)  {  
-		$type = array('Bytes','KB','MB','GB','TB');  
+		$type = array('Bytes','KB','MB','GB','TB','PB','EB','ZB','YB'); 
 		for($i = 0; $bit >= 1024; $i++) {  
 			$bit/=1024;  
 		}  
