@@ -3594,7 +3594,10 @@ class PHPMailer
             //Is it a valid IPv4 address?
             return (bool) filter_var($host, FILTER_VALIDATE_IP, FILTER_FLAG_IPV4);
         }
-        if (filter_var('http://' . $host, FILTER_VALIDATE_URL)) {
+        //适合7.3之前版本
+        //if (filter_var('http://' . $host, FILTER_VALIDATE_URL, FILTER_FLAG_HOST_REQUIRED)) {return true;}
+        //php7.3之后FILTER_FLAG_HOST_REQUIRED被弃用
+        if (preg_match('/http:\/\/[\w.]+[\w\/]*[\w.]*\??[\w=&\+\%]*/is','http://' . $host)) {
             //Is it a syntactically valid hostname?
             return true;
         }
